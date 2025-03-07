@@ -1,0 +1,611 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+/* VARIABLES */
+:root {
+    --c-dark: #212529;
+    --c-brand: #720455;
+    --c-brand-light: #910a67;
+    --c-body: #727272;
+    --font-base: "Poppins", sans-serif;
+    --transition: all 0.5s ease;
+}
+
+/* RESET & HELPERS */
+body {
+    font-family: var(--font-base);
+    line-height: 1.7;
+    color: var(--c-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-weight: 600;
+    color: var(--c-dark);
+}
+
+span {
+    color: var(--c-brand-light);
+    border-bottom: 5px solid;
+}
+
+a {
+    text-decoration: none;
+    color: var(--c-brand);
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--c-brand-light);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+/* IMAGE ZOOM */
+.image-zoom {
+    position: relative;
+    /* overflow: hidden; */
+}
+
+.image-zoom-wrapper {
+    overflow: hidden;
+    position: relative;
+}
+
+.image-zoom-wrapper img {
+    transition: var(--transition);
+}
+
+.image-zoom:hover .image-zoom-wrapper img {
+    transform: scale(1.1);
+}
+
+/* NAVBAR */
+.navbar {
+    box-shadow: var(--box-shadow);
+}
+
+.navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--c-dark);
+}
+
+.navbar-nav .nav-link.active {
+    color: var(--c-brand);
+    border-bottom: 2px solid;
+}
+
+/* class Button */
+.btn {
+    font-weight: 600;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 0;
+    padding: 10px 25px;
+}
+
+.btn-brand {
+    background-color: var(--c-brand);
+    border-color: var(--c-brand);
+    color: white;
+}
+
+.btn-brand:hover {
+    background-color: var(--c-brand-light);
+    border-color: var(--c-brand-light);
+    color: white;
+}
+
+/* HERO */
+#hero {
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(86, 13, 136, 0.58)),
+        url(../images/gambar5.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#hero_B {
+    background: linear-gradient(rgba(61, 5, 5, 0.8), rgba(56, 4, 90, 0.8)),
+        url(../images/10.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+#hero_K {
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(86, 13, 136, 0.58)),
+        url(../images/gambar7.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#hero_A {
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(86, 13, 136, 0.58)),
+        url(../images/gambar9.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+#hero_F {
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(86, 13, 136, 0.58)),
+        url(../images/gambar8.jpg);
+    background-position: center;
+    background-size: cover;
+}
+
+/* SECTION  */
+.section-title {
+    margin-bottom: 20px;
+}
+
+.section-padding {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.section-title p {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ICONBOX */
+.iconbox {
+    width: 70px;
+    height: 70px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--c-brand-light);
+    color: white;
+    font-size: 34px;
+    flex: none;
+}
+
+/* SERVICE */
+.service {
+    position: relative;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.service::after {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: rgba(var(--c-brand-rgb), 0.2);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transition: var(--transition);
+}
+
+.service:hover::after {
+    width: 100%;
+    height: 100%;
+    background: var(--c-brand);
+    z-index: -1;
+}
+
+.service:hover h5,
+.service:hover p {
+    color: white;
+}
+
+.service:hover .iconbox {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    border-radius: 100%;
+}
+/* TEAM */
+.team-box {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+}
+
+.team-box:hover {
+    transform: translateY(-10px);
+}
+
+.member-img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.overlay-effect {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        45deg,
+        rgba(50, 158, 7, 0.8),
+        rgba(114, 4, 85, 0.8),
+        rgba(107, 114, 4, 0.8)
+    );
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.box-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, -50%) scale(0.8);
+    text-align: center;
+    opacity: 0;
+    z-index: 2;
+    transition: all 0.4s ease;
+}
+
+.member-name {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 5px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+}
+
+.member-role {
+    display: block;
+    color: #fff;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transform: translateY(20px);
+    transition: transform 0.4s ease 0.1s;
+}
+
+.social-links {
+    transform: translateY(20px);
+    transition: transform 0.4s ease 0.2s;
+}
+
+.social-links a {
+    display: inline-block;
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+    background: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    border-radius: 50%;
+    margin: 0 5px;
+    transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+    background: #fff;
+    color: #720455;
+    transform: translateY(-3px);
+}
+
+/* Hover Effects */
+.team-box:hover .member-img {
+    transform: scale(1.1);
+}
+
+.team-box:hover .overlay-effect {
+    opacity: 1;
+}
+
+.team-box:hover .box-content {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.team-box:hover .member-name,
+.team-box:hover .member-role,
+.team-box:hover .social-links {
+    transform: translateY(0);
+}
+
+/* Responsive */
+@media only screen and (max-width: 991px) {
+    .team-box {
+        margin-bottom: 30px;
+    }
+
+    .member-img {
+        height: 350px;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .member-img {
+        height: 300px;
+    }
+}
+
+/* Blog Section Styling */
+.text-gradient {
+    background: linear-gradient(45deg, #720455, #9c1076);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.line {
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(45deg, #720455, #9c1076);
+    margin: 0 auto;
+}
+
+.blog-card {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(114, 4, 85, 0.2);
+}
+
+.card-img-wrapper {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-img-wrapper img {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.blog-card:hover .card-img-wrapper img {
+    transform: scale(1.1);
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(114, 4, 85, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover .card-img-overlay {
+    opacity: 1;
+}
+
+.overlay-content {
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+}
+
+.blog-card:hover .overlay-content {
+    transform: translateY(0);
+}
+
+.card-title {
+    color: #720455;
+    font-size: 1.25rem;
+    line-height: 1.4;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+.btn-link {
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-link:hover {
+    transform: translateX(5px);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .blog-card {
+        margin-bottom: 30px;
+    }
+
+    .card-img-wrapper img {
+        height: 180px;
+    }
+}
+
+/* contact */
+#contact {
+    min-height: 450px;
+    background: linear-gradient(rgba(0, 0, 0, 0.72), rgba(86, 13, 136, 0.58)),
+        url(../images/gambar4.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+footer {
+    background: linear-gradient(0deg, rgb(114, 4, 85), rgba(67, 81, 91, 0)),
+        url(../images/about2.jpg), #082032;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+footer .footer-top {
+    padding-top: 80px;
+    padding-bottom: 40px;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.icon-box3 {
+    width: 50px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 100px;
+    font-size: 34px;
+    color: black;
+    margin-bottom: 10px;
+}
+.icon-box3:hover {
+    background-color: var(--c-brand-light);
+    color: white;
+}
+.icon-box4 {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--c-brand);
+    border-radius: 100px;
+    font-size: 50px;
+    color: white;
+    margin-bottom: 10px;
+}
+.card {
+    border: none;
+}
+.card_header {
+    border: none;
+    max-width: 30px;
+}
+.ellipsis {
+    color: #a09c9c;
+}
+hr {
+    color: #a09c9c;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+.muted-color {
+    color: #a09c9c;
+    font-size: 13px;
+}
+.ellipsis i {
+    margin-top: 3px;
+    cursor: pointer;
+}
+.icons i {
+    font-size: 25px;
+}
+.icons .fa-heart {
+    color: red;
+}
+.icons .fa-smile-o {
+    color: yellow;
+    font-size: 29px;
+}
+.rounded-image {
+    border-radius: 50% !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 50px;
+}
+.name {
+    font-weight: 600;
+}
+.comment-text {
+    font-size: 12px;
+}
+.status small {
+    margin-right: 10px;
+    color: blue;
+}
+.form-control {
+    border-radius: 26px;
+}
+.comment-input {
+    position: relative;
+}
+.fonts {
+    position: absolute;
+    right: 13px;
+    top: 8px;
+    color: #a09c9c;
+}
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: #8bbafe;
+    outline: 0;
+    box-shadow: none;
+}
+
+/* Mengatur margin pada section untuk memberi jarak dari navbar */
+.custom-comment-section {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+/* Mengatur tata letak elemen dalam comment-input */
+.custom-comment-input {
+    display: flex;
+    align-items: center;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+/* Mengatur tampilan input form */
+.custom-comment-input .custom-form-control {
+    flex-grow: 1;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    outline: none;
+}
+
+/* Mengatur tata letak ikon */
+.custom-comment-input .custom-fonts {
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+/* Mengatur ukuran dan margin ikon */
+.custom-comment-input .custom-fonts i {
+    font-size: 24px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.custom-comment-input .custom-fonts i:last-child {
+    margin-right: 0;
+}
